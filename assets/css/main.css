@@ -248,7 +248,7 @@ h6 {
   transition: 0.3s;
 }
 
-.navmenu .social-links a i {
+.navmenu .social-links a i
   margin: 0;
 }
 
@@ -1585,7 +1585,7 @@ section,
 }
 
 .resume .education-section .education-timeline .education-item .education-content .institution {
-  color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: color-mix(in srgb, var(--accent-color), transparent 10%);
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.8rem;
@@ -1654,6 +1654,14 @@ section,
   .resume .education-timeline .education-item .timeline-marker {
     left: 0;
   }
+}
+
+.resume .achievements li {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 0.95rem;
+  margin-bottom: 0.3em;
+  font-family: inherit;
+  font-weight: 400;
 }
 
 /*--------------------------------------------------------------
@@ -3234,4 +3242,15 @@ button.active,
 .contact .info-box {
   background: var(--background-color) !important;
   color: var(--default-color) !important;
+}
+
+.gpa {
+  background: #222;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 0.95em;
+  display: inline-block;
+  margin-left: 10px;
 }
