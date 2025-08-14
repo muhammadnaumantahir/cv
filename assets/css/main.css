@@ -20,38 +20,41 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #314862; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #13447f; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #065cc2; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #314862;  /* The default color of the main navmenu links */
-  --nav-hover-color: #065cc2; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #11427d; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #065cc2; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #acc4e0; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --background-color: #000000;      /* Black background for the entire website */
+  --default-color: #ffffff;         /* White text for the majority of the content */
+  --heading-color: #ffffff;         /* White headings */
+  --accent-color: #ffffff;          /* White accent color for buttons, links, etc. */
+  --surface-color: #111111;         /* Dark gray for cards/boxes */
+  --contrast-color: #ffffff;        /* White for contrast text */
 }
 
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. */
+:root {
+  --nav-color: #ffffff;                 /* White nav menu links */
+  --nav-hover-color: #cccccc;           /* Light gray on hover */
+  --nav-mobile-background-color: #111111; /* Dark gray for mobile nav */
+  --nav-dropdown-background-color: #222222; /* Slightly lighter for dropdowns */
+  --nav-dropdown-color: #ffffff;        /* White dropdown links */
+  --nav-dropdown-hover-color: #cccccc;  /* Light gray on hover */
+}
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f7faff;
-  --surface-color: #ffffff;
+  --background-color: #ffffff;
+  --default-color: #111111;
+  --heading-color: #111111;
+  --accent-color: #111111; /* or your preferred accent */
+  --surface-color: #f8f9fa;
+  --contrast-color: #111111;
 }
 
 .dark-background {
-  --background-color: #065cc2;
+  --background-color: #000000;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --accent-color: #afcdf1;
-  --surface-color: #2973cc;
+  --accent-color: #ffffff;
+  --surface-color: #111111;
   --contrast-color: #ffffff;
 }
 
@@ -1278,8 +1281,7 @@ section,
 }
 
 .skills .skills-summary .summary-stats .stat-item .stat-circle i {
-  color: var(--contrast-color);
-  font-size: 20px;
+  color: var(--accent-color) !important;
 }
 
 .skills .skills-summary .summary-stats .stat-item .stat-info .stat-number {
@@ -1316,6 +1318,20 @@ section,
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+/* Fix white circles for stats and certifications on dark theme */
+.skills-summary .stat-circle,
+.skills-summary .skills-badges .skill-badge {
+  background: var(--surface-color) !important;
+  color: var(--accent-color) !important;
+  border: 2px solid #222 !important;
+  box-shadow: none !important;
+}
+
+/* Optional: Make text inside badges more readable */
+.skills-summary .skills-badges .skill-badge {
+  color: var(--default-color) !important;
 }
 
 @keyframes shimmer {
@@ -1448,13 +1464,14 @@ section,
 }
 
 .resume .experience-section .experience-cards .experience-card .card-header .duration {
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
-  padding: 0.4rem 0.8rem;
+  background: rgba(255,255,255,0.08) !important; /* subtle light overlay */
+  color: #fff !important;
+  font-weight: 600;
   border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  white-space: nowrap;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95em;
+  box-shadow: none;
+  border: none;
 }
 
 .resume .experience-section .experience-cards .experience-card .card-body p {
@@ -1557,13 +1574,14 @@ section,
 }
 
 .resume .education-section .education-timeline .education-item .education-content .degree-header .year {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  padding: 0.3rem 0.7rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  white-space: nowrap;
+  background: rgba(255,255,255,0.08) !important; /* subtle light overlay */
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95em;
+  box-shadow: none;
+  border: none;
 }
 
 .resume .education-section .education-timeline .education-item .education-content .institution {
@@ -2548,7 +2566,7 @@ section,
 
 .portfolio-details .portfolio-details-media .thumbnail-grid img:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 15px rgba(0,  0, 0, 0.1);
 }
 
 .portfolio-details .portfolio-details-media .tech-stack-badges {
@@ -2559,6 +2577,7 @@ section,
 }
 
 .portfolio-details .portfolio-details-media .tech-stack-badges span {
+ 
   display: inline-block;
   padding: 6px 12px;
   font-size: 13px;
@@ -3171,4 +3190,48 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/* Make service/skill card icons match dark theme */
+.service-item .icon i,
+.skills-grid .skill-item .skill-icon {
+  background: var(--surface-color) !important;
+  color: var(--accent-color) !important;
+  border: 2px solid #333;
+}
+
+/* Universal dark theme button styles */
+button,
+.btn,
+.portfolio .portfolio-filters li {
+  background: #181818 !important;
+  color: #fff !important;
+  border: 2px solid transparent;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+button:hover,
+.btn:hover,
+.portfolio .portfolio-filters li:hover {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #444;
+}
+
+button.active,
+.btn.active,
+.portfolio .portfolio-filters li.filter-active {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #fff;
+}
+
+/* Fix contact section background for dark theme */
+.contact,
+.contact .container,
+.contact .contact-form,
+.contact .info-box {
+  background: var(--background-color) !important;
+  color: var(--default-color) !important;
 }
