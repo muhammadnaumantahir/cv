@@ -1666,9 +1666,9 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Services Section
+# certifications Section
 --------------------------------------------------------------*/
-.services .service-item {
+.certifications .service-item {
   height: 100%;
   padding: 2rem;
   background-color: var(--surface-color);
@@ -1679,7 +1679,7 @@ section,
   overflow: hidden;
 }
 
-.services .service-item::before {
+.certifications .service-item::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1690,35 +1690,35 @@ section,
   transition: height 0.3s ease-in-out;
 }
 
-.services .service-item:hover {
+.certifications .service-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px -5px rgba(0, 0, 0, 0.08);
 }
 
-.services .service-item:hover::before {
+.certifications .service-item:hover::before {
   height: 100%;
 }
 
-.services .service-item:hover .icon i {
+.certifications .service-item:hover .icon i {
   transform: scale(1.1) rotate(5deg);
   color: var(--accent-color);
 }
 
-.services .service-item:hover .link-item i {
+.certifications .service-item:hover .link-item i {
   transform: translateX(5px);
 }
 
-.services .service-item .icon {
+.certifications .service-item .icon {
   margin-bottom: 1.5rem;
 }
 
-.services .service-item .icon i {
+.certifications .service-item .icon i {
   font-size: 2.5rem;
   color: color-mix(in srgb, var(--accent-color), transparent 15%);
   transition: all 0.3s ease-in-out;
 }
 
-.services .service-item h3 {
+.certifications .service-item h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -1726,18 +1726,18 @@ section,
   font-family: var(--heading-font);
 }
 
-.services .service-item p {
+.certifications .service-item p {
   color: color-mix(in srgb, var(--default-color), transparent 25%);
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-.services .service-item .card-links {
+.certifications .service-item .card-links {
   margin-top: auto;
 }
 
-.services .service-item .card-links .link-item {
+.certifications .service-item .card-links .link-item {
   display: inline-flex;
   align-items: center;
   color: var(--accent-color);
@@ -1746,46 +1746,73 @@ section,
   transition: color 0.3s ease;
 }
 
-.services .service-item .card-links .link-item i {
+.certifications .service-item .card-links .link-item i {
   margin-left: 0.5rem;
   font-size: 1.1rem;
   transition: transform 0.3s ease;
 }
 
-.services .service-item .card-links .link-item:hover {
+.certifications .service-item .card-links .link-item:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
 @media (max-width: 991px) {
-  .services .card-item {
+  .certifications .card-item {
     padding: 1.75rem;
   }
 
-  .services .card-item h3 {
+  .certifications .card-item h3 {
     font-size: 1.35rem;
   }
 
-  .services .card-item .icon i {
+  .certifications .card-item .icon i {
     font-size: 2.25rem;
   }
 }
 
 @media (max-width: 767px) {
-  .services .card-item {
+  .certifications .card-item {
     padding: 1.5rem;
   }
 
-  .services .card-item h3 {
+  .certifications .card-item h3 {
     font-size: 1.25rem;
   }
 
-  .services .card-item .icon i {
+  .certifications .card-item .icon i {
     font-size: 2rem;
   }
 
-  .services .card-item:hover {
+  .certifications .card-item:hover {
     transform: translateY(-3px);
   }
+}
+
+.certifications .container .service-item .certificationsli {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.certifications .container .service-item .certificationsli li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  font-size: 0.9rem;
+}
+
+.certifications .container .service-item .certificationsli li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.certifications .container .service-item .certificationsli li:last-child {
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -3254,4 +3281,11 @@ button.active,
   font-size: 0.95em;
   display: inline-block;
   margin-left: 10px;
+}
+
+.btn-outline.glightbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1rem;
 }
