@@ -200,9 +200,12 @@ h6 {
   bottom: 0;
   right: -300px;
   z-index: 997;
-  transition: 0.3s;
   width: 300px;
-  overflow: hidden;
+  background-color: var(--nav-mobile-background-color);
+  transition: 0.3s;
+  overflow: hidden; /* keep this here */
+  display: flex;
+  flex-direction: column;
 }
 
 .navmenu .profile-img img {
@@ -350,6 +353,12 @@ h6 {
   transition: 0.3s;
 }
 
+.navmenu-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -405,7 +414,7 @@ h6 {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: var(--nav-dropdown-background-color);
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -419,7 +428,7 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--background-color), transparent 20%);
   color: var(--contrast-color);
 }
 

@@ -240,4 +240,32 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Contact Form Submission using fetch()
+   */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      fetch(contactForm.action, {
+        method: contactForm.method,
+        body: new FormData(contactForm)
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text(); // or response.json() if your server returns JSON
+      })
+      .then(result => {
+        console.log('Success:', result);
+        alert("✅ Message sent successfully!");
+        contactForm.reset();
+      })
+      .catch(error => {
+        console.error('Fetch error:', error);
+        alert("❌ Failed to send message. Please try again.");
+      });
+    });
+  }
+
 })();
